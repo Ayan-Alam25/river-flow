@@ -5,7 +5,7 @@ import React from "react";
 import VoteButtons from "./VoteButtons";
 import { useAuthStore } from "@/store/Auth";
 import { avatars, databases } from "@/models/client/config";
-import { answerCollection, db } from "@/models/name";
+import { answerCollection, db } from "@/models";
 import RTE, { MarkdownPreview } from "./RTE";
 import Comments from "./Comments";
 import slugify from "@/utils/slugify";
@@ -31,7 +31,7 @@ const Answers = ({
       const response = await fetch("/api/answer", {
         method: "POST",
         body: JSON.stringify({
-          questionId:  questionId,
+          questionId: questionId,
           answer: newAnswer,
           authorId: user.$id,
         }),

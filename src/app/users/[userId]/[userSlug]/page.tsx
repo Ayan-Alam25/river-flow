@@ -3,7 +3,7 @@ import { UserPrefs } from "@/store/Auth";
 import React from "react";
 import { MagicCard, MagicContainer } from "@/components/magicui/magic-card";
 import NumberTicker from "@/components/magicui/number-ticket";
-import { answerCollection, db, questionCollection } from "@/models/name";
+import { answerCollection, db, questionCollection } from "@/models";
 import { Query } from "node-appwrite";
 
 const Page = async ({

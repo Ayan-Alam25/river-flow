@@ -1,5 +1,5 @@
 import { IndexType, Permission } from "node-appwrite";
-import { answerCollection, db } from "../name";
+import { answerCollection, db } from "..";
 import { databases } from "./config";
 
 export default async function createAnswerCollection() {

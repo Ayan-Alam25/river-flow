@@ -1,10 +1,10 @@
-import {db} from "../name"
-import createAnswerCollection from "./answer.collection"
-import createCommentCollection from "./comment.collection"
-import createQuestionCollection from "./question.collection"
-import createVoteCollection from "./vote.collection"
+import { db } from "..";
+import createAnswerCollection from "./answer.collection";
+import createCommentCollection from "./comment.collection";
+import createQuestionCollection from "./question.collection";
+import createVoteCollection from "./vote.collection";
 
-import {databases} from "./config"
+import { databases } from "./config";
 
 export default async function getOrCreateDB() {
   try {

@@ -1,6 +1,6 @@
 import Pagination from "@/components/Pagination";
 import { MarkdownPreview } from "@/components/RTE";
-import { answerCollection, db, questionCollection } from "@/models/name";
+import { answerCollection, db, questionCollection } from "@/models";
 import { databases } from "@/models/server/config";
 import slugify from "@/utils/slugify";
 import Link from "next/link";

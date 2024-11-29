@@ -12,11 +12,7 @@ import { Models, ID } from "appwrite";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { databases, storage } from "@/models/client/config";
-import {
-  db,
-  questionAttachmentBucket,
-  questionCollection,
-} from "@/models/name";
+import { db, questionAttachmentBucket, questionCollection } from "@/models";
 import { Confetti } from "@/components/magicui/confetti";
 
 const LabelInputContainer = ({
