@@ -16,7 +16,7 @@ interface IAuthStore {
   hydrated: boolean;
 
   setHydrated(): void;
-  verfiySession(): Promise<void>;
+  verifySession(): Promise<void>;
   login(
     email: string,
     password: string
@@ -47,17 +47,24 @@ export const useAuthStore = create<IAuthStore>()(
         set({ hydrated: true });
       },
 
-      async verfiySession() {
+      async verifySession() {
         try {
           const session = await account.getSession("current");
+          console.log("Active session:", session);
           set({ session });
         } catch (error) {
-          console.log(error);
+          console.log("No active session:", error);
         }
       },
 
       async login(email: string, password: string) {
         try {
+          const existingSession = await account.getSession("current");
+          if (existingSession) {
+            set({ session: existingSession });
+            return { success: true };
+          }
+
           const session = await account.createEmailPasswordSession(
             email,
             password
@@ -75,7 +82,7 @@ export const useAuthStore = create<IAuthStore>()(
 
           return { success: true };
         } catch (error) {
-          console.log(error);
+          console.log("login user failed:", error);
           return {
             success: false,
             error: error instanceof AppwriteException ? error : null,
