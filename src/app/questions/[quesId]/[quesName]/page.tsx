@@ -188,7 +188,7 @@ const Page = async ({
                     question.attachmentId,
                     600,
                     500
-                  ).href
+                  )
                 }
                 alt={question.title}
                 className="mt-3 rounded-lg"
@@ -208,7 +208,7 @@ const Page = async ({
             <div className="mt-4 flex items-center justify-end gap-1">
               <picture>
                 <img
-                  src={avatars.getInitials(author.name, 36, 36).href}
+                  src={avatars.getInitials(author.name, 36, 36)}
                   alt={author.name}
                   className="rounded-lg"
                 />
