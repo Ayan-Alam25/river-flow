@@ -8,13 +8,18 @@ const Page = async ({
 }: {
   params: { quesId: string; quesName: string };
 }) => {
-  const question = await databases.getDocument(
-    db,
-    questionCollection,
-    params.quesId
-  );
+  try {
+    const question = await databases.getDocument(
+      db,
+      questionCollection,
+      params.quesId
+    );
 
-  return <EditQues question={question} />;
+    return <EditQues question={question} />;
+  } catch (error) {
+    console.error("Error fetching question:", error);
+    return <div>Error loading question</div>;
+  }
 };
 
 export default Page;
