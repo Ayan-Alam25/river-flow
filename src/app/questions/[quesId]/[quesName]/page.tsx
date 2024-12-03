@@ -18,21 +18,19 @@ import { storage } from "@/models/client/config";
 import { UserPrefs } from "@/store/Auth";
 import convertDateToRelativeTime from "@/utils/relativeTime";
 import slugify from "@/utils/slugify";
+import { IconEdit } from "@tabler/icons-react";
 import Link from "next/link";
 import { Query } from "node-appwrite";
 import React from "react";
 import DeleteQuestion from "./DeleteQuestion";
 import EditQuestion from "./EditQuestion";
 import { TracingBeam } from "@/components/ui/tracing-beam";
-import { unstable_noStore as noStore } from "next/cache";
 
 const Page = async ({
   params,
 }: {
   params: { quesId: string; quesName: string };
 }) => {
-  noStore();
-
   const [question, answers, upvotes, downvotes, comments] = await Promise.all([
     databases.getDocument(db, questionCollection, params.quesId),
     databases.listDocuments(db, answerCollection, [
@@ -182,12 +180,12 @@ const Page = async ({
             />
             <picture>
               <img
-                src={storage.getFilePreview(
-                  questionAttachmentBucket,
-                  question.attachmentId,
-                  600,
-                  500
-                )}
+                src={
+                  storage.getFilePreview(
+                    questionAttachmentBucket,
+                    question.attachmentId
+                  ).href
+                }
                 alt={question.title}
                 className="mt-3 rounded-lg"
               />
@@ -206,7 +204,7 @@ const Page = async ({
             <div className="mt-4 flex items-center justify-end gap-1">
               <picture>
                 <img
-                  src={avatars.getInitials(author.name, 36, 36)}
+                  src={avatars.getInitials(author.name, 36, 36).href}
                   alt={author.name}
                   className="rounded-lg"
                 />
