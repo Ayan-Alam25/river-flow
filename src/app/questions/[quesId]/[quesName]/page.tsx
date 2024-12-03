@@ -12,7 +12,7 @@ import {
   questionCollection,
   commentCollection,
   questionAttachmentBucket,
-} from "@/models";
+} from "@/models/name";
 import { databases, users } from "@/models/server/config";
 import { storage } from "@/models/client/config";
 import { UserPrefs } from "@/store/Auth";
@@ -182,14 +182,12 @@ const Page = async ({
             />
             <picture>
               <img
-                src={
-                  storage.getFilePreview(
-                    questionAttachmentBucket,
-                    question.attachmentId,
-                    600,
-                    500
-                  )
-                }
+                src={storage.getFilePreview(
+                  questionAttachmentBucket,
+                  question.attachmentId,
+                  600,
+                  500
+                )}
                 alt={question.title}
                 className="mt-3 rounded-lg"
               />

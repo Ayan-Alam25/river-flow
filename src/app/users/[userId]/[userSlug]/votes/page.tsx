@@ -4,7 +4,7 @@ import {
   db,
   questionCollection,
   voteCollection,
-} from "@/models";
+} from "@/models/name";
 import { databases } from "@/models/server/config";
 import convertDateToRelativeTime from "@/utils/relativeTime";
 import slugify from "@/utils/slugify";

@@ -1,7 +1,7 @@
 "use client";
 
 import { databases } from "@/models/client/config";
-import { commentCollection, db } from "@/models";
+import { commentCollection, db } from "@/models/name";
 import { useAuthStore } from "@/store/Auth";
 import { cn } from "@/lib/utils";
 import convertDateToRelativeTime from "@/utils/relativeTime";

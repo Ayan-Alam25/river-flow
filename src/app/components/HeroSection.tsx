@@ -1,7 +1,11 @@
 import React from "react";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { databases } from "@/models/server/config";
-import { db, questionAttachmentBucket, questionCollection } from "@/models";
+import {
+  db,
+  questionAttachmentBucket,
+  questionCollection,
+} from "@/models/name";
 import { Query } from "node-appwrite";
 import slugify from "@/utils/slugify";
 import { storage } from "@/models/client/config";

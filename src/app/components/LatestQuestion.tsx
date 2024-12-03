@@ -4,7 +4,7 @@ import {
   db,
   questionCollection,
   voteCollection,
-} from "@/models";
+} from "@/models/name";
 import { databases, users } from "@/models/server/config";
 import { UserPrefs } from "@/store/Auth";
 import { Query } from "node-appwrite";
