@@ -4,7 +4,7 @@ import {
   db,
   voteCollection,
   questionCollection,
-} from "@/models/name";
+} from "@/models";
 import { Query } from "node-appwrite";
 import React from "react";
 import Link from "next/link";
